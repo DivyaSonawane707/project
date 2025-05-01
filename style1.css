@@ -1,0 +1,197 @@
+ * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      body {
+        background: linear-gradient(135deg, #1f1c2c, #928dab);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 20px;
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s forwards;
+      }
+      
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+      
+      .weather-container {
+        width: 100%;
+        max-width: 500px;
+        animation: slideUp 0.8s ease-out forwards;
+        opacity: 0;
+      }
+      
+      @keyframes slideUp {
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        from {
+          transform: translateY(50px);
+        }
+      }
+      
+      header {
+        text-align: center;
+        margin-bottom: 20px;
+        animation: fadeIn 1.2s ease forwards;
+      }
+      
+      header h1 {
+        font-size: 32px;
+        margin-bottom: 5px;
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+      }
+      
+      header p {
+        color: #ccc;
+      }
+      
+      .glass {
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 15px;
+        padding: 20px;
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0,0,0,0.2);
+        margin-bottom: 20px;
+        transition: all 0.3s ease;
+        animation: fadeIn 1s ease-in forwards;
+      }
+      
+      .glass:hover {
+        box-shadow: 0 8px 40px rgba(0,0,0,0.3);
+      }
+      
+      .current-weather {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 1s ease forwards;
+      }
+      
+      .current-weather .left h2 {
+        font-size: 40px;
+      }
+      
+      .current-weather .left p {
+        font-size: 18px;
+        color: #ddd;
+      }
+      
+      .current-weather .left span {
+        font-size: 14px;
+        color: #bbb;
+      }
+      
+      .current-weather img {
+        width: 80px;
+        transition: transform 0.3s ease;
+      }
+      
+      .current-weather img:hover {
+        transform: rotate(20deg) scale(1.1);
+      }
+      
+      .details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+        text-align: center;
+      }
+      
+      .details .item h4 {
+        font-size: 14px;
+        color: #ccc;
+      }
+      
+      .details .item p {
+        font-size: 16px;
+        font-weight: 600;
+        color: #fff;
+      }
+      
+      h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+      
+      .forecast {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        opacity: 0;
+        animation: fadeIn 1.5s ease forwards;
+      }
+      
+      .forecast .day {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 5px 0;
+        transition: background-color 0.3s ease;
+      }
+      
+      .forecast .day:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      
+      .forecast .day p {
+        flex: 1;
+        font-weight: 500;
+      }
+      
+      .forecast .day img {
+        width: 35px;
+      }
+      
+      .forecast .day span {
+        flex: 1;
+        text-align: right;
+        color: #ddd;
+      }
+      
+      .forecast .day:hover {
+        animation: pulse 1s infinite;
+      }
+      
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.05);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .current-weather {
+          flex-direction: column;
+          gap: 15px;
+        }
+      
+        .forecast .day {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      
+        .forecast .day span {
+          text-align: left;
+        }
+      }
+      
